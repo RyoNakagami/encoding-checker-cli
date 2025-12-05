@@ -1,2 +1,3 @@
-def main() -> None:
-    print("Hello from encoding-checker!")
+from .cli import app, main
+
+__all__ = ["app", "main"]
