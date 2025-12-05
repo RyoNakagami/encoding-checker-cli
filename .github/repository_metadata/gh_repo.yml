@@ -1,0 +1,14 @@
+meta-data:
+  repository_name: encoding-checker-cli
+  visibility: public
+  org-name: RyoNakagami
+  tag:
+    - uv
+    - Python
+    - uv-tool
+    - uvx
+    - command-line
+    - encoding
+  description: |
+    A command-line tool for checking and converting text encoding.
+  license: mit
