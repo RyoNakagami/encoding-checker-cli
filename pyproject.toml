@@ -7,7 +7,9 @@ authors = [
     { name = "RyoNak", email = "nakagamiryo0901@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "typer>=0.20.0",
+]
 
 [project.scripts]
 pycheck-encoding = "encoding_checker_cli:main"
