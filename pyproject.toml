@@ -8,6 +8,8 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "bs4>=0.0.2",
+    "chardet>=5.2.0",
     "typer>=0.20.0",
 ]
 
@@ -26,4 +28,5 @@ addopts = "--cov=src --cov-report=term-missing"
 [dependency-groups]
 dev = [
     "pytest>=9.0.1",
+    "pytest-cov>=7.0.0",
 ]

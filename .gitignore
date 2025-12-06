@@ -53,6 +53,8 @@ dist/
 wheels/
 share/python-wheels/
 
+# ---- pytest ----
+.coverage
 
 # ---- Notebooks (if any) ----
 .ipynb_checkpoints/

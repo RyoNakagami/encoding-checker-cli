@@ -9,8 +9,8 @@ def get_version() -> str:
 
     Priority:
     1. Installed metadata (importlib.metadata.version)
-    2. pyproject.toml in development mode
-    3. fallback "0.0.0"
+    2. [DEBUG]: pyproject.toml in development mode
+    3. [DEBUG]: fallback "0.0.0"
     """
 
     # 1. Installed package metadata
@@ -19,7 +19,7 @@ def get_version() -> str:
     except PackageNotFoundError:
         pass
 
-    # 2. Development mode: look for pyproject.toml
+    # 2. [DEBUG]: Development mode: look for pyproject.toml
     current = Path(__file__).resolve()
     for parent in current.parents:
         pyproject = parent / "pyproject.toml"
@@ -33,5 +33,5 @@ def get_version() -> str:
             except Exception:
                 pass
 
-    # 3. fallback
+    # 3. [DEBUG]: fallback
     return "0.0.0"
