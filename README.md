@@ -20,6 +20,29 @@ see [docs/ENCODING_DETECTION_STRATEGY.md](docs/ENCODING_DETECTION_STRATEGY.md)
 pycheck-encoding <filename>
 ```
 
+```bash
+$ pycheck-encoding --help
+
+ Usage: pycheck-encoding [OPTIONS] [FILE_PATH]
+
+ This script provides a simple command-line tool to detect the text
+ encoding of a given file. It attempts to decode the file's binary
+ contents using a list of common encodings including UTF-8, UTF-16,
+ UTF-32, Shift_JIS, EUC-JP, ISO-8859 variants, CP932, and others.
+
+ If the file can be successfully decoded with one of these encodings, the
+ script reports the detected encoding. If none of the encodings work, it
+ notifies the user that the encoding could not be determined.
+
+╭─ Arguments ─────────────────────────────────────────────────────────────╮
+│   file_path      [FILE_PATH]  Path to the file to check encoding.       │
+╰─────────────────────────────────────────────────────────────────────────╯
+╭─ Options ───────────────────────────────────────────────────────────────╮
+│ --version  -v        Show version information and exit.                 │
+│ --help               Show this message and exit.                        │
+╰─────────────────────────────────────────────────────────────────────────╯
+```
+
 ### Python API
 
 ```python
@@ -32,7 +55,7 @@ print(f"Detected encoding: {encoding}")
 ## Installation
 
 ```bash
-pip install .
+uv tool install git+https://github.com/RyoNakagami/encoding-checker-cli
 ```
 
 ## Test

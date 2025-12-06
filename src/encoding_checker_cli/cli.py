@@ -7,8 +7,7 @@ from encoding_checker_cli.encoding import detect_file_encoding
 from encoding_checker_cli.library.version import __version__
 
 app = typer.Typer(
-    invoke_without_command=True,
-    no_args_is_help=False,
+    add_completion=False,
     help=(
         "This script provides a simple command-line tool to detect the text "
         "encoding of a given file. It attempts to decode the file's binary "
@@ -28,7 +27,7 @@ def version_callback(value: bool):
         raise typer.Exit()
 
 
-@app.callback()
+@app.command()
 def check_encoding(
     file_path: Path = typer.Argument(
         None,
@@ -43,7 +42,16 @@ def check_encoding(
         is_eager=True,
     ),
 ):
-    """Run encoding detection."""
+    """
+    This script provides a simple command-line tool to detect the text
+    encoding of a given file. It attempts to decode the file's binary
+    contents using a list of common encodings including UTF-8, UTF-16,
+    UTF-32, Shift_JIS, EUC-JP, ISO-8859 variants, CP932, and others.\n\n
+    If the file can be successfully decoded with one of these encodings,
+    the script reports the detected encoding. If none of the encodings
+    work, it notifies the user that the encoding could not be determined.
+    """
+
     if not Path(file_path).exists():
         print(f"Error: File '{file_path}' does not exist", file=sys.stderr)
         sys.exit(1)
