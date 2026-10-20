@@ -16,20 +16,7 @@ project: encoding-checker-cli
 - Follow clear naming conventions for branches to enhance collaboration and maintainability.
 
 ```mermaid
-%%| fig-width: 16
-%%| fig-height: 12
-%%{ init: {
-    'theme': 'default',
-    'themeVariables': {
-        'fontFamily': 'Meiryo'
-    },
-    'gitGraph': {
-        'orientation': 'LR',
-        'nodeSpacing': 150,
-        'mainBranchName': 'main'
-    }
-} }%%
-$ gitGraph
+gitGraph
    commit id: "" tag: "v1.0.0"
 
    branch hotfix
