@@ -61,7 +61,7 @@ def detect_file_encoding(file_path: Path) -> str | None:
         pass
 
     # 2. Use chardet as fallback
-    detector = chardet.universaldetector.UniversalDetector()
+    detector = chardet.UniversalDetector()
     for chunk_start in range(0, len(raw_bytes), 1024):
         chunk = raw_bytes[chunk_start : chunk_start + 1024]
         detector.feed(chunk)
